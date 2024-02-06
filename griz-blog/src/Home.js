@@ -1,17 +1,23 @@
-const Home = () => {
-  const handleClick = (e) => {
-    console.log('Hello World!', e);
-  }
+import { useState } from "react";
 
-  const handleClickToo = (name, e) => {
-    console.log('Hello ' + name + '!', e.target);
-  }
+const Home = () => {
+
+  const [blogs, setBlogs] = useState([
+    { title: 'My new website', body: 'lorem ipsum...', author: 'Griz', id: 1 },
+    { title: 'Welcome Party!', body: 'lorem ipsum...', author: 'Griz', id: 2 },
+    { title: 'Web dev top tips', body: 'lorem ipsum...', author: 'Griz', id: 3 },
+  ]);
 
   return (
     <div className="home">
       <h2>Home Page</h2>
-      <button onClick={handleClick}>Click Me</button>
-      <button onClick={(e) => handleClickToo('Yoshi', e)}>Click Me Too!</button>
+      {blogs.map((blog) => (
+        <div className="blog-preview" key={blog.id}>
+          <h2>{blog.title}</h2>
+          <p>Written by: {blog.author}</p>
+          <p>{blog.body}</p>
+        </div>
+      ))}
     </div>
   );
 }
