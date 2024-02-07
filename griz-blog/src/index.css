@@ -34,6 +34,12 @@
   color: #f1356d;
 }
 
+.createButton {
+  color: 'white';
+  background-color: '#f1356d';
+  border-radius: '8px';
+}
+
 .content {
   max-width: 600px;
   margin: 40px auto;
