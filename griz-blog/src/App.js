@@ -4,6 +4,7 @@ import Home from './Home';
 import NavBar from './NavBar';
 import Create from './Create';
 import BlogDetails from './BlogDetails';
+import NotFound from './NotFound';
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
             <Route path="/create" element={<Create />} />
             <Route exact path="/blogs/:id" element={<BlogDetails />} />
             <Route exact path="/" element={<Home />} />
+            <Route exact path="*" element={<NotFound />} />
           </Routes>
         </div>
       </div>
